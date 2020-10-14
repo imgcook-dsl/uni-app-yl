@@ -121,7 +121,7 @@ module.exports = function(schema, option) {
 		const styleData = [];
 		for (let key in style) {
 			let value = style[key];
-			if (boxStyleList.indexOf(key) != -1) {
+			if (boxStyleList.indexOf(key) != -1 && String(value).indexOf("%") == -1 && String(value).indexOf("auto") == -1) {
 				if (toVW) {
 					value = (parseInt(value) / _w).toFixed(2);
 					value = value == 0 ? value : value + 'vw';
@@ -570,8 +570,8 @@ module.exports = function(schema, option) {
 
 	const prettierOpt = {
 		parser: 'vue',
-		printWidth: 80,
 		tabWidth: 4,
+		printWidth: 120,
 		singleQuote: true
 	};
 
