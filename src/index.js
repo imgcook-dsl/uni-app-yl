@@ -571,6 +571,7 @@ module.exports = function(schema, option) {
 	const prettierOpt = {
 		parser: 'vue',
 		printWidth: 80,
+		tabWidth: 4,
 		singleQuote: true
 	};
 
@@ -607,21 +608,24 @@ module.exports = function(schema, option) {
 			{
 				panelName: 'index.css',
 				panelValue: prettier.format(`${styles.join('\n')}`, {
-					parser: 'css'
+					parser: 'css',
+					tabWidth: 4
 				}),
 				panelType: 'css'
 			},
 			{
 				panelName: 'index.response.css',
 				panelValue: prettier.format(styles4vw.join('\n'), {
-					parser: 'css'
+					parser: 'css',
+					tabWidth: 4
 				}),
 				panelType: 'css'
 			},
 			{
 				panelName: 'index.rem.css',
 				panelValue: prettier.format(styles4rem.join('\n'), {
-					parser: 'css'
+					parser: 'css',
+					tabWidth: 4
 				}),
 				panelType: 'css'
 			},
@@ -629,6 +633,7 @@ module.exports = function(schema, option) {
 				panelName: 'index.rpx.scss',
 				panelValue: prettier.format(`${generateScss(schema)}`, {
 					parser: 'scss',
+					tabWidth: 4,
 					printWidth: 120,
 					singleQuote: true
 				}),
