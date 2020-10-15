@@ -371,7 +371,7 @@ module.exports = function(schema, option) {
 					if (obj[str]) {
 						extraClasses.push(obj[str])
 					} else {
-						const exclude = ['flex-direction: row']
+						const exclude = ['flex-direction: row', 'align-items: flex-start', 'justify-content: flex-start']
 						if (!exclude.includes(str)) {
 							newStyle[key] = value
 						}
