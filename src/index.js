@@ -133,7 +133,7 @@ module.exports = function(schema, option) {
 				} else if (toRPX) {
 					value = String(value);
 					value = value.replace(/(rem)|(px)/, "");
-					value = (Number(value) * 750) / width;
+					value = ((Number(value) * 750) / width).toFixed(2);
 					value = "" + value;
 
 					if (value.length > 3 && value.substr(-3, 3) == "rem") {
