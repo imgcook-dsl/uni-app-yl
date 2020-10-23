@@ -146,7 +146,7 @@ module.exports = function(schema, option) {
 					value = value == 0 ? value : value + 'px';
 				}
 				styleData.push(`${_.kebabCase(key)}: ${value}`);
-			} else if (noUnitStyles.indexOf(key) != -1) {
+			} else if (noUnitStyles.indexOf(key) != -1 && !isNaN(value)) {
 				styleData.push(`${_.kebabCase(key)}: ${parseFloat(value)}`);
 			} else if (excludeStyles.indexOf(key) === -1) {
 				styleData.push(`${_.kebabCase(key)}: ${value}`);
